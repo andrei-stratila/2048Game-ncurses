@@ -8,7 +8,7 @@ exists for the Classic mode.
 
 ### Installation
 ```
-git commit https://github.com/andrei-stratila/2048Game-ncurses.git
+git clone https://github.com/andrei-stratila/2048Game-ncurses.git
 make 
 make run or ./2048
 ```
