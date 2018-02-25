@@ -1,4 +1,3 @@
-//MENU.C
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,10 +9,11 @@
 #define height 20
 #define width 20
 
+//Menu.c
 void print2048();
 void showMenu(WINDOW *winMenu, int current, int n_optMenu, char *optMenu[]);
 int createMenu(WINDOW *winMenu, int n_optMenu, char *optMenu[]);
-
+//gamePlay.c
 double Log2(double x);
 void resetBoard(int board[4][4], int *score);
 void resetPrevBoard(int prevBoard[4][4], int *prevScore);
@@ -37,14 +37,14 @@ void printBoardFibonacci(WINDOW *winGame, int board[4][4]);
 void playGame(int board[4][4], WINDOW *winGame, int *score, int *reset, 
 	int secAutoMove, int mode, int Obstacles);
 void print2048Text();
-
+//Settings.c
 void printSettingsText(WINDOW *winSettings);
 void managerSettings(WINDOW *winSettings, int *secAutoMove, int *mode, int *Obstacles);
 void showSettings(WINDOW *winSettings, int current, int n_optSettings, char *optSettings[]);
 int createSettings(WINDOW *winSettings, int n_optSettings, char *optSettings[]);
 void setAutoMoveTime(WINDOW *winSettings, int *secAutoMove);
 void printModeGameSett(WINDOW *winSettings, int gameMode);
-
+//Leaderbord.c
 void managerLeaderbord(WINDOW *winLeaderbord);
 void readFileData(char entries[10][50], FILE *file);
 void takeUsernameForLeaderbord(WINDOW *winGame, char username[10]);
