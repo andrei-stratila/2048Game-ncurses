@@ -26,16 +26,16 @@ void resetPrevBoard(int prevBoard[4][4], int *prevScore){
 //Print info about controls
 void printInfo(WINDOW *winGame){
 	int infoY = LINES - 10;
-	wattron(winGame, COLOR_PAIR(31) | A_BOLD | A_BLINK);	
+	wattron(winGame, COLOR_PAIR(31) | A_BOLD );	
 	mvwprintw(winGame, infoY++, (COLS - 36) / 2, "Press < A or Arrow LEFT > to move left");
 	mvwprintw(winGame, infoY++, (COLS - 36) / 2, "Press < D or Arrow RIGHT > to move right");
 	mvwprintw(winGame, infoY++, (COLS - 36) / 2, "Press < S or Arrow DOWN > to move down");
 	mvwprintw(winGame, infoY++, (COLS - 36) / 2, "Press < W or Arrow UP > to move up");
-	wattroff(winGame, COLOR_PAIR(31) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(31) | A_BOLD );
 
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);	
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );	
 	mvwprintw(winGame, LINES - 4, (COLS - 18 ) / 2, "Press < Q > to quit");
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	wrefresh(winGame);
 }
 
@@ -44,9 +44,9 @@ void printTime(WINDOW *winGame){
 	time_t currentTime = time(NULL);
 	struct tm *area = localtime(&currentTime);
 	int timeY = 1, timeX = 2;
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);		
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );		
 	mvwprintw(winGame, timeY, timeX, "Time: %s", asctime(area));
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 }
 
 //Print board borders
@@ -56,7 +56,7 @@ void createBorders(WINDOW *winGame){
 	int startX = centerX - 20, stopX = centerX + 20;
 	int startY = centerY - 8, stopY = centerY + 8;
 	int i,j;
-	wattron(winGame, COLOR_PAIR(25) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(25) | A_BOLD );
 	mvwaddch(winGame, startY, startX, ACS_ULCORNER);
 	mvwaddch(winGame, centerY, centerX, ACS_PLUS);
 	mvwaddch(winGame, startY, stopX, ACS_URCORNER);
@@ -77,7 +77,7 @@ void createBorders(WINDOW *winGame){
 				mvwaddch(winGame, i, j, ACS_VLINE);
 		}
 	}
-	wattroff(winGame, COLOR_PAIR(25) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(25) | A_BOLD );
 	wrefresh(winGame);
 	refresh();
 }
@@ -381,13 +381,13 @@ char inputChar(WINDOW *winGame, int board[4][4], int prevBoard[4][4], int secAut
 //Print text "Game Over" (Ascii Art)
 void printGameOverText(WINDOW *winGame){
 	int yPos = 3, xPos = (COLS - 52) / 2;
-	wattron(winGame, A_BOLD | A_BLINK);
+	wattron(winGame, A_BOLD );
 	mvwprintw(winGame, yPos++, xPos,"   ____                       ___                 _ ");  
 	mvwprintw(winGame, yPos++, xPos,"  / ___| __ _ _ __ ___   ___ / _ \\__   _____ _ __| |"); 
 	mvwprintw(winGame, yPos++, xPos," | |  _ / _` | '_ ` _ \\ / _ | | | \\ \\ / / _ | '__| |");
 	mvwprintw(winGame, yPos++, xPos," | |_| | (_| | | | | | |  __| |_| |\\ V |  __| |  |_|");
 	mvwprintw(winGame, yPos++, xPos,"  \\____|\\__,_|_| |_| |_|\\___|\\___/  \\_/ \\___|_|  (_)");
-	wattroff(winGame, A_BOLD | A_BLINK);
+	wattroff(winGame, A_BOLD );
 	wrefresh(winGame);                                       
 }
 

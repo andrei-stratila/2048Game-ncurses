@@ -3,14 +3,14 @@
 //Print text "Settings" (Ascii Art)
 void printSettingsText(WINDOW *winSettings){
 	int yPos = LINES / 16, xPos = (COLS - 36) / 2;
-	wattron(winSettings, A_BOLD | A_BLINK);
+	wattron(winSettings, A_BOLD );
 	mvwprintw(winSettings, yPos++, xPos," ____       _   _   _                ");  
 	mvwprintw(winSettings, yPos++, xPos,"/ ___|  ___| |_| |_(_)_ __   __ _ ___ "); 
 	mvwprintw(winSettings, yPos++, xPos,"\\___ \\ / _ \\ __| __| | '_ \\ / _` / __|");
 	mvwprintw(winSettings, yPos++, xPos," ___) |  __/ |_| |_| | | | | (_| \\__ \\");
 	mvwprintw(winSettings, yPos++, xPos,"|____/ \\___|\\__|\\__|_|_| |_|\\__, |___/");
 	mvwprintw(winSettings, yPos++, xPos,"                            |___/     ");
-	wattroff(winSettings, A_BOLD | A_BLINK);
+	wattroff(winSettings, A_BOLD );
 	wrefresh(winSettings);
 }
 

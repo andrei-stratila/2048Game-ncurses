@@ -60,15 +60,7 @@ void createFile_Leaderdbord(){
 	}
 }
 
-//Maximize the window using xdotool
-void maximizeWindow(){
-	if(system("xdotool key ctrl+super+Up"))
-		system("sudo apt-get install xdotool");
-	system("xdotool key ctrl+super+Up");
-}
 int main(){
-	
-	maximizeWindow();
 	
 	//Init game variables and curses options 
 	WINDOW *winMenu, *winGame, *winSettings, *winLeaderbord;
