@@ -3,13 +3,13 @@
 //Print text "2048" (Ascii Art)
 void print2048Text(){
 	int yPos = LINES / 16, xPos = (COLS - 26) / 2;
-	attron(COLOR_PAIR(20) | A_BOLD | A_BLINK);
+	attron(COLOR_PAIR(20) | A_BOLD );
 	mvprintw(yPos++, xPos," ____   ___  _  _    ___");  
 	mvprintw(yPos++, xPos,"|___ \\ / _ \\| || |  ( _ )"); 
 	mvprintw(yPos++, xPos,"  __) | | | | || |_ / _ \\ ");
 	mvprintw(yPos++, xPos," / __/| |_| |__   _| (_) |");
 	mvprintw(yPos++, xPos,"|_____|\\___/   |_|  \\___/");
-	attroff(COLOR_PAIR(20) | A_BOLD | A_BLINK);
+	attroff(COLOR_PAIR(20) | A_BOLD );
 	refresh();
 }
 

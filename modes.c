@@ -25,9 +25,9 @@ void printBoardClassic(WINDOW *winGame, int board[4][4], int score){
 	int num_Color = 0;
 	createBorders(winGame);
 	//Print score
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );
 	mvwprintw(winGame, scoreY, scoreX, "Score: %d", score);
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	startX = COLS / 2 -  15;
 	startY = LINES / 2 - 6;
 	int i, j;
@@ -79,9 +79,9 @@ void printBoardReverse(WINDOW *winGame, int board[4][4]){
 	int num_Color = 0;
 	createBorders(winGame);
 	//Print score
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );
 	mvwprintw(winGame, scoreY, scoreX, "Score: N/A");
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	startX = COLS / 2 -  15;
 	startY = LINES / 2 - 6;
 	int i, j, value;
@@ -134,9 +134,9 @@ void printBoardLogarithmic(WINDOW *winGame, int board[4][4]){
 	int num_Color = 0;
 	createBorders(winGame);
 	//Print score
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );
 	mvwprintw(winGame, scoreY, scoreX, "Score: N/A");
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	startX = COLS / 2 -  15;
 	startY = LINES / 2 - 6;
 	int i, j, value;
@@ -189,9 +189,9 @@ void printBoardAlphabet(WINDOW *winGame, int board[4][4]){
 	int num_Color = 0;
 	createBorders(winGame);
 	//Print score
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );
 	mvwprintw(winGame, scoreY, scoreX, "Score: N/A");
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	startX = COLS / 2 -  15;
 	startY = LINES / 2 - 6;
 	int i, j;
@@ -252,9 +252,9 @@ void printBoardFibonacci(WINDOW *winGame, int board[4][4]){
 	int num_Color = 0;
 	createBorders(winGame);
 	//Print score
-	wattron(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattron(winGame, COLOR_PAIR(32) | A_BOLD );
 	mvwprintw(winGame, scoreY, scoreX, "Score: N/A");
-	wattroff(winGame, COLOR_PAIR(32) | A_BOLD | A_BLINK);
+	wattroff(winGame, COLOR_PAIR(32) | A_BOLD );
 	startX = COLS / 2 -  15;
 	startY = LINES / 2 - 6;
 	int i, j, value;

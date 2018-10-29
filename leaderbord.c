@@ -136,39 +136,39 @@ int verifyScoreForLeaderbord(WINDOW *winGame, int finalScore, int Obstacles){
 //Print text "Leaderbord" (Ascii Art)
 void printLeaderbordText(WINDOW *winLeaderbord){
 	int yPos = LINES / 16, xPos = (COLS - 56) / 2;
-	wattron(winLeaderbord, A_BOLD | A_BLINK);
+	wattron(winLeaderbord, A_BOLD );
 	mvwprintw(winLeaderbord, yPos++, xPos," _                   _           _                   _ ");  
 	mvwprintw(winLeaderbord, yPos++, xPos,"| |    ___  __ _  __| | ___ _ __| |__   ___  _ __ __| |"); 
 	mvwprintw(winLeaderbord, yPos++, xPos,"| |   / _ \\/ _` |/ _` |/ _ \\ '__| '_ \\ / _ \\| '__/ _` |");
 	mvwprintw(winLeaderbord, yPos++, xPos,"| |__|  __/ (_| | (_| |  __/ |  | |_) | (_) | | | (_| |");
 	mvwprintw(winLeaderbord, yPos++, xPos,"|_____\\___|\\__,_|\\__,_|\\___|_|  |_.__/ \\___/|_|  \\__,_|");
-	wattroff(winLeaderbord, A_BOLD | A_BLINK);
+	wattroff(winLeaderbord, A_BOLD );
 
-	wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD | A_BLINK);	
+	wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD );	
 	mvwprintw(winLeaderbord, ++yPos, (COLS - 12 ) / 2,"CLASSIC MODE");
-	wattroff(winLeaderbord, COLOR_PAIR(20) | A_BOLD | A_BLINK);
+	wattroff(winLeaderbord, COLOR_PAIR(20) | A_BOLD );
 
-	wattron(winLeaderbord, COLOR_PAIR(32) | A_BOLD | A_BLINK);	
+	wattron(winLeaderbord, COLOR_PAIR(32) | A_BOLD );	
 	mvwprintw(winLeaderbord, LINES - 2, (COLS - 18 ) / 2, "Press < Q > to quit");
-	wattroff(winLeaderbord, COLOR_PAIR(32) | A_BOLD | A_BLINK);	
+	wattroff(winLeaderbord, COLOR_PAIR(32) | A_BOLD );	
 	wrefresh(winLeaderbord);
 }
 
 //Print Leaderbord in window game
 void printScoresLeaderbord(WINDOW *winLeaderbord, char entries[10][50]){
 	int yPos = LINES / 16 + 8, xPos = (COLS - 65) / 2;
-	wattron(winLeaderbord, COLOR_PAIR(23) | A_BOLD | A_BLINK);
+	wattron(winLeaderbord, COLOR_PAIR(23) | A_BOLD );
 	mvwprintw(winLeaderbord, yPos++, xPos,"Pos\tName\t\t\tObstacles\tScores");
-	wattron(winLeaderbord, COLOR_PAIR(23) | A_BOLD | A_BLINK);
+	wattron(winLeaderbord, COLOR_PAIR(23) | A_BOLD );
 	xPos++;
 	yPos++;
 	int index;
 	for(index = 0; index < 10; index++){
 		if(!isalnum(entries[index][0]))
 			break;
-		wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD | A_BLINK);
+		wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD );
 		mvwprintw(winLeaderbord, yPos, xPos, "%s", entries[index]);
-		wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD | A_BLINK);
+		wattron(winLeaderbord, COLOR_PAIR(20) | A_BOLD );
 		yPos = yPos + 2;
 	}
 	wrefresh(winLeaderbord);
@@ -215,7 +215,7 @@ void managerLeaderbord(WINDOW *winLeaderbord){
 		inputKey = wgetch(winLeaderbord);
 		inputKey = tolower(inputKey);
 		if(inputKey == 'q'){
-			wclear(winLeaderbord);
+			werase(winLeaderbord);
 			wrefresh(winLeaderbord);
 			return;
 		}
