@@ -7,10 +7,12 @@ The game contains a settings menu with different choices as timer for automove, 
 exists for the Classic mode.
 
 ### Installation
+
+Requirements : libncurses-dev
 ```
 git clone https://github.com/andrei-stratila/2048Game-ncurses.git
 make 
-make run or ./2048
+make run
 ```
 ### Running
 
